@@ -23,10 +23,17 @@ const deck = document.querySelector('.deck');
 const moves = document.querySelector('.moves');
 const restart = document.querySelector('.restart');
 const stars = document.querySelector('.stars').children;
+const overlay = document.querySelector('.overlay');
+const replayButton = document.querySelector('.replayButton');
+const finalscore = document.querySelector('.finalscore');
+const starrating = document.querySelector('.starrating');
+const result = document.querySelector('.result');
+const graph = document.querySelector('.graph');
 
 let openedCards = [];
 let matchCounter = 0;
 let counter = 0;
+let starCounter = 3;
 
 
 
@@ -98,11 +105,10 @@ function cardsUnmatch(){
 function addMatch(){
   matchCounter++;
   if (matchCounter == 8) {
-    console.log('finish');
+    gameOver();
   } else {
-    console.log('play more');
+    addMove();
   }
-  addMove();
 }
 
 // @description Counts moves and hides stars
@@ -111,25 +117,46 @@ function addMove(){
   moves.innerText = counter;
   if (counter == 10){
     stars[2].style.visibility = 'hidden';
+    starCounter--;
   } else if (counter == 20) {
     stars[1].style.visibility = 'hidden';
+    starCounter--;
   } else if (counter == 30) {
     stars[0].style.visibility = 'hidden';
+    starCounter--;
   }
   for (const card of cards) {
     card.classList.remove('disable');
   }
 }
 
+// @description Shows game over dialog
+function gameOver(){
+  finalscore.innerText = counter;
+  starrating.innerText = starCounter;
+  if (counter >= 20) {
+    result.innerText = 'Looser';
+    graph.style.backgroundImage = 'url(img/looser.png)';
+  }
+  overlay.classList.add('show');
+}
 
+// @description Closes game over dialog and starts new game
+function rePlay(){
+  overlay.classList.remove('show');
+  startNewGame();
+}
 
 // Adds event listeners to all cards
 for (const card of cards) {
   card.addEventListener('click', clickedCard);
 }
 
-// Adds event listener restart button
+// Adds event listener to restart button
 restart.addEventListener('click', startNewGame);
+
+// Adds event listener to play again button
+replayButton.addEventListener('click', rePlay);
 
 // Starts a new game when the document is loaded
 window.onload = startNewGame();

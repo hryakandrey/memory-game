@@ -35,6 +35,17 @@ h1 {
     font-weight: 300;
 }
 
+h2 {
+  color: #0a6970;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+}
+
+a {
+  color: #b3d5d6;
+  text-decoration: none;
+}
+
 /*
  * Styles for the deck of cards
  */
@@ -118,21 +129,63 @@ h1 {
     cursor: pointer;
 }
 
+
 /*
- * Styles for the Modal
+ * Styles for the Game Over Modal
  */
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: 0 auto;
-    padding: 0;
-    width: 660px;
-    min-height: 440px;
-    background: #ffffff url('../img/winner.png');
-    background-size:cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  background: #ffffff url('../img/regal.png');
+	transition: opacity 500ms;
+  visibility: hidden;
+	opacity: 1;
+  display: flex;
+}
+
+.popup {
+	margin: auto auto;
+	padding: 75px 0;
+	background: #ffffff;
+	border-radius: 10px;
+	width: 660px;
+  /* min-height: 680px; */
+	position: relative;
+  text-align: center;
+}
+
+.graph{
+  /* width: 300px; */
+  height: 200px;
+  background: url('../img/winner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+button {
+  background: #0a6970;
+  color: #b3d5d6;
+  width: 200px;
+  height: 35px;
+  font-family: 'Coda', cursive;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  	font-size: 1rem;
+}
+
+.score{
+  margin: 25px 0;
+}
+
+.show {
+	visibility: visible;
+}
+
 }
