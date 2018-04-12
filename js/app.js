@@ -105,7 +105,7 @@ function cardsUnmatch(){
 function addMatch(){
   matchCounter++;
   if (matchCounter == 8) {
-    gameOver();
+    setTimeout(gameOver, 1500);
   } else {
     addMove();
   }
