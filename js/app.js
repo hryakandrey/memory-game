@@ -23,11 +23,10 @@ const cards = [...document.getElementsByClassName('card')];
 const deck = document.querySelector('.deck');
 const moves = document.querySelector('.moves');
 const restart = document.querySelector('.restart');
+const stars = document.querySelector('.stars').children;
 
 let openedCards = [];
-
 let matchCounter = 0;
-
 let counter = 0;
 
 /*
@@ -39,15 +38,12 @@ let counter = 0;
 
 function startNewGame(){
   shuffle(cards);
-
   for (const card of cards) {
     card.classList.remove('open', 'show', 'match', 'disable');
     deck.appendChild(card);
   }
-
   resetCounters();
 }
-
 
 
 
@@ -58,11 +54,13 @@ function clickedCard(){
   }
 }
 
+
 function disable(){
   for (const card of cards) {
     card.classList.add('disable');
   }
 }
+
 
 function enable(){
   for (const card of cards) {
@@ -117,6 +115,13 @@ function addMatch(){
 function addMove(){
   counter++;
   moves.innerText = counter;
+  if (counter == 10){
+    stars[2].style.visibility = 'hidden';
+  } else if (counter == 20) {
+    stars[1].style.visibility = 'hidden';
+  } else if (counter == 30) {
+    stars[0].style.visibility = 'hidden';
+  }
   enable();
 }
 
@@ -125,13 +130,10 @@ function resetCounters(){
   matchCounter = 0;
   counter = 0;
   moves.innerText = counter;
+  for (star of stars) {
+    star.style.removeProperty('visibility');
+  }
 }
-
-
-
-
-window.onload = startNewGame();
-
 
 
 
@@ -140,6 +142,14 @@ for (const card of cards) {
 }
 
 restart.addEventListener('click', startNewGame);
+
+
+
+window.onload = startNewGame();
+
+
+
+
 
 /*
  * set up the event listener for a card. If a card is clicked:

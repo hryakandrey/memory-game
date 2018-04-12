@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    /* background: #ffffff url('../img/geometry2.png');  */
+    background: #ffffff url('../img/regal.png');
     /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
@@ -30,6 +30,7 @@ body {
 }
 
 h1 {
+  color: #0a6970;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
@@ -41,10 +42,10 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: linear-gradient(180deg, #b3d5d6 0%, #0a6970 100%);
     padding: 32px;
     border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.7);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -53,7 +54,7 @@ h1 {
 }
 
 .deck .card {
-    transition: 0.2s;
+    transition: transform 0.3s, font-size 0s;
     height: 125px;
     width: 125px;
     background: #2e3d49;
@@ -68,20 +69,25 @@ h1 {
 }
 
 .deck .card.open {
-    transition: 0.2s;
-    /* transform: rotateY(0); */
-    background: #02b3e4;
+    transition: transform 0.3s, font-size 0s;
+    transform: rotateY(0.5turn);
+    background: #0a6970;
     cursor: default;
 }
 
 .deck .card.show {
-    font-size: 33px;
+    font-size: 40px;
 }
 
 .deck .card.match {
+    transform: rotateY(0.5turn);
     cursor: default;
-    background: #02ccba;
-    font-size: 33px;
+    background: gold;
+    font-size: 40px;
+}
+
+.cc {
+    transform: rotateY(0.5turn);
 }
 
 /*
@@ -99,6 +105,7 @@ h1 {
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
+    color: gold;
 }
 
 .score-panel .stars li {
@@ -109,4 +116,23 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+/*
+ * Styles for the Modal
+ */
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    padding: 0;
+    width: 660px;
+    min-height: 440px;
+    background: #ffffff url('../img/winner.png');
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
