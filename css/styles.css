@@ -124,6 +124,10 @@ a {
     display: inline-block;
 }
 
+.time {
+    padding-left: 10px;
+}
+
 .score-panel .restart {
     float: right;
     cursor: pointer;

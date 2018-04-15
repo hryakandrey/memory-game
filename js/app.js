@@ -29,12 +29,15 @@ const finalscore = document.querySelector('.finalscore');
 const starrating = document.querySelector('.starrating');
 const result = document.querySelector('.result');
 const graph = document.querySelector('.graph');
+const time = document.querySelector('.time');
+const finaltime = document.querySelector('.finaltime');
 
 let openedCards = [];
 let matchCounter = 0;
 let counter = 0;
 let starCounter = 3;
-
+let timer = 0;
+let finalTime;
 
 
 // @description Shuffles cards and reset counters
@@ -44,12 +47,14 @@ function startNewGame(){
     card.classList.remove('open', 'show', 'match', 'disable');
     deck.appendChild(card);
   }
-  matchCounter = 0;
-  counter = 0;
-  moves.innerText = counter;
   for (star of stars) {
     star.style.removeProperty('visibility');
   }
+  matchCounter = 0;
+  counter = 0;
+  moves.innerText = counter;
+  timer = 0;
+  time.innerText = "0 min 0 sec";
 }
 
 
@@ -105,7 +110,8 @@ function cardsUnmatch(){
 function addMatch(){
   matchCounter++;
   if (matchCounter == 8) {
-    setTimeout(gameOver, 1500);
+    finalTime = time.innerText;
+    setTimeout(gameOver, 1000);
   } else {
     addMove();
   }
@@ -130,10 +136,12 @@ function addMove(){
   }
 }
 
+
 // @description Shows game over dialog
 function gameOver(){
   finalscore.innerText = counter;
   starrating.innerText = starCounter;
+  finaltime.innerText = finalTime;
   if (counter >= 20) {
     result.innerText = 'Looser';
     graph.style.backgroundImage = 'url(img/looser.png)';
@@ -157,6 +165,13 @@ restart.addEventListener('click', startNewGame);
 
 // Adds event listener to play again button
 replayButton.addEventListener('click', rePlay);
+
+// @description Updates timer info with 1 second delay
+let timerId = setTimeout(function tick() {
+  timer++;
+  time.innerText = `${Math.round(timer/60)} min ${timer%60} sec`;
+  timerId = setTimeout(tick, 1000);
+}, 1000);
 
 // Starts a new game when the document is loaded
 window.onload = startNewGame();
