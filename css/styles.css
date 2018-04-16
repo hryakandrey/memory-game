@@ -31,14 +31,15 @@ body {
 
 h1 {
   color: #0a6970;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  text-align: center;
 }
 
 h2 {
   color: #0a6970;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
 }
 
 a {
@@ -157,9 +158,9 @@ a {
 	background: #ffffff;
 	border-radius: 10px;
 	width: 660px;
-  /* min-height: 680px; */
 	position: relative;
   text-align: center;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.7);
 }
 
 .graph{
@@ -190,4 +191,49 @@ button {
 
 .show {
 	visibility: visible;
+}
+
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  .deck .card.show {
+    font-size: 30px;
+  }
+
+  .deck .card.match {
+    font-size: 30px;
+  }
+
+  .score-panel {
+    width: 85vw;
+  }
+
+}
+
+@media screen and (max-width: 660px) {
+  .deck {
+    width: 90vw;
+    min-height: unset;
+    padding: 3vw;
+    margin: 1em 0 3em;
+    }
+  .deck .card {
+    width: 18vw;
+    height: 18vw;
+    margin: 3vw 1vw 0vw 1vw;
+    }
+  .deck .card:nth-of-type(13),
+  .deck .card:nth-of-type(14),
+  .deck .card:nth-of-type(15),
+  .deck .card:nth-of-type(16) {
+    margin: 3vw 1vw 3vw 1vw;
+    }
+  .popup{
+    width: 90vw;
+  }
+
+
+
 }
