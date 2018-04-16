@@ -193,9 +193,15 @@ button {
 	visibility: visible;
 }
 
+
+/*
+ * Responsive Media Queries
+ */
+
 @media screen and (max-width: 480px) {
   header h1 {
     font-size: 1.6em;
+    padding: 0 0.5em;
   }
 
   .deck .card.show {
@@ -230,10 +236,11 @@ button {
   .deck .card:nth-of-type(16) {
     margin: 3vw 1vw 3vw 1vw;
     }
-  .popup{
+  .popup {
     width: 90vw;
+    height: auto;
+    margin: auto;
+    padding: 30px 15px;
   }
-
-
 
 }
