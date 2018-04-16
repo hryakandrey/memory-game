@@ -164,7 +164,6 @@ a {
 }
 
 .graph{
-  /* width: 300px; */
   height: 200px;
   background: url('../img/winner.png');
   background-size: contain;
@@ -225,17 +224,20 @@ button {
     padding: 3vw;
     margin: 1em 0 3em;
     }
+
   .deck .card {
     width: 18vw;
     height: 18vw;
     margin: 3vw 1vw 0vw 1vw;
     }
+
   .deck .card:nth-of-type(13),
   .deck .card:nth-of-type(14),
   .deck .card:nth-of-type(15),
   .deck .card:nth-of-type(16) {
     margin: 3vw 1vw 3vw 1vw;
     }
+
   .popup {
     width: 90vw;
     height: auto;
