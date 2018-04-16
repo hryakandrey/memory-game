@@ -4,7 +4,7 @@
 This is a logic game to train your memory and attention.
 
 ## Instructions
-You should match pairs of cards with less moves and time. Each 10 moves you loose 1 star from the rating. If you succeed to match all 16 cards in 20 moves you are Blockchain Winner, otherwise you are Blockchain Looser.
+You should match pairs of cards with less moves and time. Each 10 moves you loose 1 star from the rating. If you succeed to match all 16 cards in 20 moves you are the Blockchain Winner, otherwise you are the Blockchain Looser.
 
 ## How to play
 Open the following link: https://hryakandrey.github.io/memory-game/
