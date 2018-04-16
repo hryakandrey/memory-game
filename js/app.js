@@ -117,20 +117,19 @@ function addMatch(){
   }
 }
 
-// @description Counts moves and hides stars
+// @description Counts moves and hides stars, makes cards clickable
 function addMove(){
   counter++;
   moves.innerText = counter;
+
   if (counter == 10){
     stars[2].style.visibility = 'hidden';
     starCounter--;
   } else if (counter == 20) {
     stars[1].style.visibility = 'hidden';
     starCounter--;
-  } else if (counter == 30) {
-    stars[0].style.visibility = 'hidden';
-    starCounter--;
   }
+
   for (const card of cards) {
     card.classList.remove('disable');
   }
@@ -142,10 +141,12 @@ function gameOver(){
   finalscore.innerText = counter;
   starrating.innerText = starCounter;
   finaltime.innerText = finalTime;
+
   if (counter >= 20) {
     result.innerText = 'Looser';
     graph.style.backgroundImage = 'url(img/looser.png)';
   }
+  
   overlay.classList.add('show');
 }
 
