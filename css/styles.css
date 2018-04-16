@@ -181,7 +181,7 @@ button {
   cursor: pointer;
   outline: none;
   border-radius: 5px;
-  	font-size: 1rem;
+	font-size: 1rem;
 }
 
 .score{
@@ -190,6 +190,4 @@ button {
 
 .show {
 	visibility: visible;
-}
-
 }
