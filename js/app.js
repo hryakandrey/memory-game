@@ -56,6 +56,7 @@ function startNewGame(){
   counter = 0;
   moves.innerText = counter;
   time.innerText = "0 min 0 sec";
+  openedCards = [];
   startTimer();
 }
 
