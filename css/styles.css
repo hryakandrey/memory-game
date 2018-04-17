@@ -204,11 +204,11 @@ button {
   }
 
   .deck .card.show {
-    font-size: 30px;
+    font-size: 35px;
   }
 
   .deck .card.match {
-    font-size: 30px;
+    font-size: 35px;
   }
 
   .score-panel {
@@ -222,7 +222,7 @@ button {
     width: 90vw;
     min-height: unset;
     padding: 3vw;
-    margin: 1em 0 3em;
+    margin: 0.5em 0 3em;
     }
 
   .deck .card {
@@ -242,7 +242,7 @@ button {
     width: 90vw;
     height: auto;
     margin: auto;
-    padding: 30px 15px;
+    padding: 40px 20px;
   }
 
 }
