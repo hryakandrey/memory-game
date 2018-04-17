@@ -39,7 +39,7 @@ h1 {
 h2 {
   color: #0a6970;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 a {
@@ -242,7 +242,7 @@ button {
     width: 90vw;
     height: auto;
     margin: auto;
-    padding: 40px 20px;
+    padding: 20px 20px;
   }
 
 }
