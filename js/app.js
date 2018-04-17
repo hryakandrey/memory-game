@@ -16,7 +16,7 @@ function shuffle(array) {
   return array;
 }
 
-
+const $ = document.querySelector;
 const cards = [...document.getElementsByClassName('card')];
 const deck = document.querySelector('.deck');
 const moves = document.querySelector('.moves');
@@ -30,6 +30,7 @@ const result = document.querySelector('.result');
 const graph = document.querySelector('.graph');
 const time = document.querySelector('.time');
 const finaltime = document.querySelector('.finaltime');
+const container = document.querySelector('.container');
 
 let openedCards = [];
 let matchCounter = 0;
@@ -52,11 +53,12 @@ function startNewGame(){
     star.style.removeProperty('visibility');
   }
 
+  starCounter = 3;
+  openedCards = [];
   matchCounter = 0;
   counter = 0;
   moves.innerText = counter;
   time.innerText = "0 min 0 sec";
-  openedCards = [];
   startTimer();
 }
 
@@ -152,7 +154,8 @@ function gameOver(){
     graph.style.backgroundImage = 'url(img/looser.png)';
   }
 
-  overlay.classList.add('show');
+  overlay.style.display = 'flex';
+  container.style.display = 'none';
 }
 
 
@@ -165,7 +168,8 @@ function reStart(){
 
 // @description Closes game over dialog and starts new game
 function rePlay(){
-  overlay.classList.remove('show');
+  container.style.display = 'flex';
+  overlay.style.display = 'none';
   startNewGame();
 }
 

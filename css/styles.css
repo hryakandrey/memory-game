@@ -140,16 +140,15 @@ a {
  */
 
 .overlay {
-	position: fixed;
+	/* position: fixed; */
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
   background: #ffffff url('../img/regal.png');
 	transition: opacity 500ms;
-  visibility: hidden;
 	opacity: 1;
-  display: flex;
+  display: none;
 }
 
 .popup {
@@ -186,10 +185,6 @@ button {
 
 .score{
   margin: 25px 0;
-}
-
-.show {
-	visibility: visible;
 }
 
 
@@ -242,7 +237,7 @@ button {
     width: 90vw;
     height: auto;
     margin: auto;
-    padding: 20px 20px;
+    padding: 40px 20px;
   }
 
 }
